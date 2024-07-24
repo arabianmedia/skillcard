@@ -1,0 +1,199 @@
+
+{% load static %}
+{% include 'header.html' %}
+
+
+  <section class="heading-page header-text" id="top">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <h6>Apply Now</h6>
+          <h2>Apply for Skill Cards</h2>
+        </div>
+      </div>
+    </div>
+  </section>
+<style>
+
+  p,li,h3,label{
+    color:white;
+    
+  }
+
+  .meetings-page ul li{
+    list-style:circle;
+    margin-left: 20px;
+  }
+
+  .carddd1{
+    width: 60%;
+  }
+
+  section.meetings-page .main-button-red {
+    text-align: left;
+  }
+  .form-group{
+    margin-bottom: 20px;
+  }
+
+  .ui-datepicker {
+    background: white;
+    border: 1px solid #555;
+    padding: .2em .2em 0;
+    display: none;
+    z-index: 9999 !important;
+    cursor: pointer;
+    padding:20px;
+}
+.ui-datepicker .ui-datepicker-title {
+    background: #f5f5f5;
+    padding: .2em 0;
+}
+
+
+.main-button-red button {
+  font-size: 13px;
+  color: #fff;
+  background-color: #a12c2f;
+  padding: 12px 30px;
+  display: inline-block;
+  border-radius: 22px;
+  font-weight: 500;
+  text-transform: uppercase;
+  transition: all .3s;
+}
+
+
+</style>
+
+  <section class="meetings-page" id="meetings">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8">
+          
+          <form method="post">
+            {% csrf_token %}
+            <!-- Personal Information -->
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" class="form-control" id="name" name="name" placeholder="Enter your full name" required>
+            </div>
+            <div class="form-group">
+                <label for="address">Address</label>
+                <input type="text" class="form-control" id="address" name="address" placeholder="Enter your address" required>
+            </div>
+            <div class="form-group">
+                <label for="ni_number">NI Number</label>
+                <input type="text" class="form-control" id="ni_number" name="ni_number"  placeholder="Format: AA 11 11 11 A" required>
+            </div>
+            <div class="form-group">
+                <label for="town_city">Town / City</label>
+                <input type="text" class="form-control" id="town_city" name="town_city" placeholder="Enter your town or city" required>
+            </div>
+            <div class="form-group">
+                <label for="dob">D.O.B.</label>
+                <input type="text" class="form-control" id="dob" name="dob" placeholder="DD/MM/YYYY" pattern="\d{2}/\d{2}/\d{4}" required>
+            </div>
+            <div class="form-group">
+                <label for="postcode">Postcode</label>
+                <input type="text" class="form-control" id="postcode" name="postcode" placeholder="Enter your postcode" required>
+            </div>
+            <div class="form-group">
+                <label for="phone">Phone</label>
+                <input type="tel" class="form-control" id="phone" name="phone" placeholder="Enter your phone number" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" class="form-control" id="email" name="email" placeholder="Enter your email address" required>
+            </div>
+            <div class="form-group">
+                <label for="card_type">Card Type</label>
+                <select class="form-control" id="card_type" name="card_type" required>
+                    <option value="">Select card type</option>
+                    <option value="card1">Card 1</option>
+                    <option value="card2">Card 2</option>
+                    <option value="card3">Card 3</option>
+                </select>
+            </div>
+
+            <!-- Uploads Section -->
+            <h3 class="mt-4">Uploads</h3>
+            <div class="form-group">
+                <label for="ccnsg_passport">CCNSG Passport</label>
+                <input type="file" class="form-control-file" id="ccnsg_passport" name="ccnsg_passport">
+            </div>
+            <div class="form-group">
+                <label for="tica_certificates">TICA Certificates</label>
+                <input type="file" class="form-control-file" id="tica_certificates" name="tica_certificates">
+            </div>
+            <div class="form-group">
+                <label for="asbestos_certificate">Asbestos Awareness Certificate</label>
+                <input type="file" class="form-control-file" id="asbestos_certificate" name="asbestos_certificate">
+            </div>
+
+            <!-- Application Photo Section -->
+            <h3 class="mt-4">Application Photo</h3>
+            <p>Please upload a head and shoulders photo.</p>
+            <div class="form-group">
+                <label for="photo">Upload Photo</label>
+                <input type="file" class="form-control-file" id="photo" name="photo" accept="image/*">
+            </div>
+
+
+            <br><br>
+            <!-- Submit Button -->
+            <div class="main-button-red text-center">
+                <button type="submit" class="">Submit Application</button>
+            </div>
+        </form>
+    
+        
+        
+
+
+
+
+        </div>
+
+        <div class="col-lg-4">
+
+
+          <br>
+              <img class="carddd" src="{{cards.democard.url}}">
+        <br><br>
+
+          <h3 style="text-align: left;">{{cards.title}}</h3>
+          <br>
+          <p style="text-align: left;"><span style="color: #ffffff;"><strong>Validity: {{cards.validity}}</strong></span></p>
+          <br>
+          {{cards.decriptions | safe}}
+
+
+
+
+
+        </div>
+
+
+
+
+
+      </div>
+    </div>
+   
+
+
+    {% include 'footer.html' %}
+
+
+    <script>
+      $(document).ready(function(){
+          $("#dob").datepicker({
+              dateFormat: "dd/mm/yy",
+              changeMonth: true,
+              changeYear: true,
+              yearRange: "1900:+0",  // Adjust as needed
+              showButtonPanel: true
+          });
+      });
+  </script>

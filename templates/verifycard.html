@@ -1,0 +1,146 @@
+
+{% load static %}
+{% include 'header.html' %}
+
+<style>
+
+  .main-button-white input {
+    font-size: 13px;
+    color: #010101;
+    background-color: #ffffff;
+    padding: 12px 30px;
+    display: inline-block;
+    border-radius: 22px;
+    font-weight: 500;
+    text-transform: uppercase;
+    transition: all .3s;
+    border:none;
+  }
+
+
+  p,li,h3{
+    color:white;
+    
+  }
+
+  .meetings-page ul li{
+    list-style:circle;
+    margin-left: 20px;
+  }
+
+  .carddd1{
+    width: 60%;
+  }
+
+  section.meetings-page .main-button-red {
+    text-align: left;
+  }
+
+</style>
+
+
+
+
+<section class="heading-page header-text" style="height: 100vh;" id="top">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <h6>Verify</h6>
+          <h2>Check a Card</h2>
+          
+          <form method="post">
+
+            {% csrf_token %}
+
+            <div style="display: flex;">
+              <div style="width: 25%; text-align:center;"></div>
+              <div style="width: 50%;" class="text-center">
+                <p style="font-size: 13px; text-align:left;">Enter Your Registation No.</p>
+                <input type="search" name="regno" placeholder="4af5e44f-fe49-41eb-82bd-7118a8a2bfbb" class="form-control mb-3" required>
+                <div class="main-button-white">
+                  <a href="#informationss">
+                    <input type="submit" value="verify">
+                  </a>
+                  
+                </div>
+                
+              </div>
+  
+            </div>
+
+          </form>
+
+        
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+  <section class="meetings-page" id="meetings">
+    <div class="container">
+      <div class="row">
+
+
+
+        <div class="col-lg-12" id="informationss">
+          <div class="row">
+
+
+<!-- card start -->
+        {% if usr.name %}    
+        <div class="col-lg-6">
+            <h3>
+              {{usr.name}}
+            </h3>
+            <br><br>
+            <ul>
+              <li><strong>Address:</strong> {{ usr.address }}</li>
+              <li><strong>NI Number:</strong> {{ usr.ni_number }}</li>
+              <li><strong>Town/City:</strong> {{ usr.town_city }}</li>
+              <li><strong>Date of Birth:</strong> {{ usr.dob }}</li>
+              <li><strong>Postcode:</strong> {{ usr.postcode }}</li>
+              <li><strong>Phone:</strong> {{ usr.phone }}</li>
+              <li><strong>Email:</strong> {{ usr.email }}</li>
+              <li><strong>Card Type:</strong> {{ usr.card_type }}</li>
+          </ul>
+
+        </div>
+
+        
+        <div class="col-lg-6">
+          {% if usr.skillcard %}
+          <img width="80%" src="{{usr.skillcard.url}}">
+          {% else %}
+          <p>
+            Skill card is Not Generated Now
+          </p>
+          {% endif %}
+        </div>
+
+
+      {% else %}
+        <h3>{{usr}}</h3>
+      {% endif %}
+        
+
+
+          
+
+
+
+
+            
+           
+
+<!-- card end  -->
+            
+          </div>
+        </div>
+      </div>
+    </div>
+   
+
+
+    {% include 'footer.html' %}
