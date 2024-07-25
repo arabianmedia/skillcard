@@ -38,7 +38,7 @@ def applyform(request,slug):
         asbestos_certificate = request.FILES.get('asbestos_certificate')
         photo = request.FILES.get('photo')
         dob = datetime.strptime(dob, "%d/%m/%Y").strftime("%Y-%m-%d")
-
+        reggno = generate_unique_registration_no()
         
         application = Application(
                 name=name,
@@ -54,7 +54,7 @@ def applyform(request,slug):
                 tica_certificates=tica_certificates,
                 asbestos_certificate=asbestos_certificate,
                 photo=photo,
-                registration_no=generate_unique_registration_no(),
+                registration_no=reggno,
                 slug=slugify(name),
                 cardapplyfor = card
         )
@@ -87,7 +87,7 @@ def applyform(request,slug):
         <br><br>
         <h3>Your Registation No.</h3>
         <p style="padding:20px; border: 2px solid gray; margin:40px;">
-            {generate_unique_registration_no()}
+            {reggno}
         </p>
 
 
@@ -123,7 +123,7 @@ def applyform(request,slug):
             <br><br>
             <h3>Your Registation No.</h3>
             <p style="padding:20px; border: 2px solid gray; margin:40px;">
-                {generate_unique_registration_no()}
+                {reggno}
             </p>
                             
 

@@ -49,7 +49,7 @@ class Application(models.Model):
 
     #certificate 
     skillcard = models.FileField(upload_to='uploads/skillcard/', blank=True, null=True)
-    slug = models.SlugField(unique=True, blank=True)
+    slug = models.SlugField(blank=True)
 
     cardapplyfor = models.ForeignKey(cardDetails, on_delete=models.CASCADE)
 
