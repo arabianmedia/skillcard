@@ -35,6 +35,19 @@
   section.meetings-page .main-button-red {
     text-align: left;
   }
+  .democard{
+    width: 80%;
+    height: 300px;
+    background-color: #01010190;
+    border-radius: 20px;
+  }
+
+  .democard p{
+    text-align: center;
+    padding-top : 148px;
+  }
+
+
 
 </style>
 
@@ -113,9 +126,17 @@
           {% if usr.skillcard %}
           <img width="80%" src="{{usr.skillcard.url}}">
           {% else %}
-          <p>
-            Skill card is Not Generated Now
-          </p>
+
+          <div class="democard">
+            <p>
+              Skill card is Not Generated Now
+            </p>
+
+          </div>
+          
+
+
+
           {% endif %}
         </div>
 

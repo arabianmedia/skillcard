@@ -9,13 +9,12 @@ SECRET_KEY = 'django-insecure-fmqelucb$qv0@4g!7-h5yh^-_f4%tz8lblqqmmvy*j8hrs_9$f
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-# ALLOWED_HOSTS = ['*']
-ALLOWED_HOSTS = ['.vercel.app','.now.sh','127.0.0.1','localhost','arabianmedia.ae','skillcard.arabianmedia.ae']
+ALLOWED_HOSTS = ['*']
+# ALLOWED_HOSTS = ['.vercel.app','.now.sh','127.0.0.1','localhost','arabianmedia.ae','skillcard.arabianmedia.ae']
 
 
 
 # Email Setup
-
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com' 
 EMAIL_PORT = 587  
@@ -23,6 +22,8 @@ EMAIL_USE_TLS = True
 EMAIL_HOST_USER = 'ajay@arabianmedia.ae' 
 EMAIL_HOST_PASSWORD = 'fjyfigzwlyzofjkn' 
 DEFAULT_FROM_EMAIL = 'ajay@arabianmedia.ae' 
+
+
 
 # fjyf igzw lyzo fjkn
 
@@ -75,22 +76,22 @@ WSGI_APPLICATION = 'skillcard.wsgi.application'
 
 
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': BASE_DIR / 'db.sqlite3',
-#     }
-# }
-
-
-import dj_database_url
-
-# Parse the PostgreSQL URL
 DATABASES = {
-    'default': dj_database_url.config(
-        default='postgresql://postgres:MtvxsWgEsGjqyLzYdCzVXVUnFazQlUYo@viaduct.proxy.rlwy.net:13568/railway'
-    )
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
+    }
 }
+
+
+# import dj_database_url
+
+# # Parse the PostgreSQL URL
+# DATABASES = {
+#     'default': dj_database_url.config(
+#         default='postgresql://postgres:MtvxsWgEsGjqyLzYdCzVXVUnFazQlUYo@viaduct.proxy.rlwy.net:13568/railway'
+#     )
+# }
 
 
 
@@ -120,8 +121,8 @@ USE_I18N = True
 
 USE_TZ = True
 
-
 STATIC_URL = '/static/'
+
 
 STATICFILES_DIRS = os.path.join(BASE_DIR, 'static'),
 # STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles', 'static')

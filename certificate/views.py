@@ -117,18 +117,8 @@ def applyform(request,slug):
             
 
         messages.success(request, 'Application submitted successfully.')
-        return HttpResponse(f'''
-            <h1>Successfully Applied for Card</h1>
-            <p>Please check your Email Id..........</p>
-            <br><br>
-            <h3>Your Registation No.</h3>
-            <p style="padding:20px; border: 2px solid gray; margin:40px;">
-                {reggno}
-            </p>
-                            
-
-            ''')
-
+        return render(request,'thankyou.html',{'tmessage':'Successfully Applied for Card','regno':reggno })
+       
 
         
         
