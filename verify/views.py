@@ -6,11 +6,14 @@ def verify(request):
 
     if request.method == "POST":
         regno = request.POST['regno']
+        print(regno)
 
         try:
             usr = Application.objects.get(registration_no=regno)
         except:
             usr = "No Users Found !!!!"
+
+        print(usr)
 
         return render(request,"verifycard.html",{'usr':usr})
     
