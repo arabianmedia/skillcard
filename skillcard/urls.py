@@ -12,6 +12,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('certificate.urls')),
     path('verify/', include('verify.urls')),
+    path('membership/', include('memebership.urls')),
 
 ]
 

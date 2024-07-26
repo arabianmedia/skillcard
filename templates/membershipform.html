@@ -1,0 +1,321 @@
+
+{% load static %}
+{% include 'header.html' %}
+
+
+  <section class="heading-page header-text" id="top">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <h6>Apply Now</h6>
+          <h2>Apply for Membership</h2>
+        </div>
+      </div>
+    </div>
+  </section>
+<style>
+
+  p,li,h3,h2,h4,label{
+    color:white;
+    
+  }
+
+  .meetings-page ul li{
+    list-style:circle;
+    margin-left: 20px;
+  }
+
+  .carddd1{
+    width: 60%;
+  }
+
+  section.meetings-page .main-button-red {
+    text-align: left;
+  }
+  .form-group{
+    margin-bottom: 20px;
+  }
+
+  .ui-datepicker {
+    background: white;
+    border: 1px solid #555;
+    padding: .2em .2em 0;
+    display: none;
+    z-index: 9999 !important;
+    cursor: pointer;
+    padding:20px;
+}
+.ui-datepicker .ui-datepicker-title {
+    background: #f5f5f5;
+    padding: .2em 0;
+}
+
+
+.main-button-red button {
+  font-size: 13px;
+  color: #fff;
+  background-color: #a12c2f;
+  padding: 12px 30px;
+  display: inline-block;
+  border-radius: 22px;
+  font-weight: 500;
+  text-transform: uppercase;
+  transition: all .3s;
+}
+
+
+</style>
+
+  <section class="meetings-page" id="meetings">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+        
+            <h2>Section 1 - Company Information</h2>
+            <form>
+              <div class="form-group">
+                <label for="companyName">Company Name</label>
+                <input type="text" class="form-control" id="companyName" placeholder="Enter company name">
+              </div>
+        
+              <div class="form-group">
+                <label for="asbestosRemoval">Does your business also deal with asbestos removal operations?</label>
+                <select class="form-control" id="asbestosRemoval">
+                  <option value="" disabled selected>—Please choose an option—</option>
+                  <option value="yes">Yes</option>
+                  <option value="no">No</option>
+                </select>
+              </div>
+        
+              <div class="form-group">
+                <label for="contactName">Contact Name</label>
+                <input type="text" class="form-control" id="contactName" placeholder="Enter contact name">
+              </div>
+        
+              <div class="form-group">
+                <label for="address">Address</label>
+                <input type="text" class="form-control" id="address" placeholder="Enter address">
+              </div>
+        
+              <div class="form-group">
+                <label for="postcode">Postcode</label>
+                <input type="text" class="form-control" id="postcode" placeholder="Enter postcode">
+              </div>
+        
+              <div class="form-group">
+                <label for="telephone">Telephone</label>
+                <input type="text" class="form-control" id="telephone" placeholder="Enter telephone">
+              </div>
+        
+              <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" class="form-control" id="email" placeholder="Enter email">
+              </div>
+        
+              <div class="form-group">
+                <label for="website">Website</label>
+                <input type="url" class="form-control" id="website" placeholder="Enter website">
+              </div>
+        
+              <h4>Training Contact</h4>
+              <div class="row">
+                <div class="col-lg-6">
+                  <div class="form-group">
+                    <label for="trainingContactName">Name</label>
+                    <input type="text" class="form-control" id="trainingContactName" placeholder="Enter name">
+                  </div>
+                </div>
+
+                <div class="col-lg-6">
+                  <div class="form-group">
+                    <label for="trainingContactEmail">Email</label>
+                    <input type="email" class="form-control" id="trainingContactEmail" placeholder="Enter email">
+                  </div>
+                </div>
+
+
+              </div>
+
+              <h4>Audit Contact (ACAD only)</h4>
+              <div class="row">
+                <div class="col-lg-6">
+                  <div class="form-group">
+                    <label for="auditContactName">Name</label>
+                    <input type="text" class="form-control" id="auditContactName" placeholder="Enter name">
+                  </div>
+                </div>
+                <div class="col-lg-6">
+                  <div class="form-group">
+                    <label for="auditContactEmail">Email</label>
+                    <input type="email" class="form-control" id="auditContactEmail" placeholder="Enter email">
+                  </div>
+                </div>
+              </div>
+        
+              
+        
+              
+              
+        
+              
+        
+              <h4>Marketing & Events Contact</h4>
+
+              <div class="row">
+                <div class="col-lg-6">
+                  <div class="form-group">
+                    <label for="marketingContactName">Name</label>
+                    <input type="text" class="form-control" id="marketingContactName" placeholder="Enter name">
+                  </div>
+                </div>
+
+                <div class="col-lg-6">
+                  <div class="form-group">
+                    <label for="marketingContactEmail">Email</label>
+                    <input type="email" class="form-control" id="marketingContactEmail" placeholder="Enter email">
+                  </div>
+                </div>
+
+              </div>
+
+
+
+              
+        
+              
+        
+              <h4>Regional Meeting Contact</h4>
+
+              <div class="row">
+                <div class="col-lg-6">
+                  <div class="form-group">
+                    <label for="regionalContactName">Name</label>
+                    <input type="text" class="form-control" id="regionalContactName" placeholder="Enter name">
+                  </div>
+                </div>
+                <div class="col-lg-6">
+                  <div class="form-group">
+                    <label for="regionalContactEmail">Email</label>
+                    <input type="email" class="form-control" id="regionalContactEmail" placeholder="Enter email">
+                  </div>
+                </div>
+              </div>
+
+
+              
+        
+              
+        
+              <h4>Accounts Contact</h4>
+
+              <div class="row">
+                <div class="col-lg-6">
+                  <div class="form-group">
+                    <label for="accountsContactName">Name</label>
+                    <input type="text" class="form-control" id="accountsContactName" placeholder="Enter name">
+                  </div>
+                </div>
+                <div class="col-lg-6">
+                  <div class="form-group">
+                    <label for="accountsContactEmail">Email</label>
+                    <input type="email" class="form-control" id="accountsContactEmail" placeholder="Enter email">
+                  </div>
+                </div>
+              </div>
+
+
+              
+        
+              
+        
+              <h4>Additional locations and contact details</h4>
+              <div class="form-group">
+                <label for="additionalTelephone">Telephone</label>
+                <input type="text" class="form-control" id="additionalTelephone" placeholder="Enter telephone">
+              </div>
+        
+              <div class="form-group">
+                <label for="additionalPostcode">Postcode</label>
+                <input type="text" class="form-control" id="additionalPostcode" placeholder="Enter postcode">
+              </div>
+        
+              <div class="form-group">
+                <label for="companyRegNo">Company Reg No</label>
+                <input type="text" class="form-control" id="companyRegNo" placeholder="Enter company reg no">
+              </div>
+        
+              <div class="form-group">
+                <label for="vatRegNo">VAT Reg No</label>
+                <input type="text" class="form-control" id="vatRegNo" placeholder="Enter VAT reg no">
+              </div>
+
+
+              <br><br>
+        
+              <h2>Section 2 - Confirm membership application</h2>
+              <div class="form-group">
+                <label for="signature">Signed</label>
+                <input type="text" class="form-control" id="signature" placeholder="Enter your name">
+              </div>
+        
+              <div class="form-group">
+                <label for="position">Position Held in Company</label>
+                <input type="text" class="form-control" id="position" placeholder="Enter position">
+              </div>
+        
+              <div class="form-group">
+                <label for="date">Date</label>
+                <input type="text" class="form-control" id="date" value="26/07/2024" readonly>
+              </div>
+        
+              <div class="form-group">
+                <label for="healthSafetyStatement">Signed Health & Safety Statement</label>
+                <input type="file" class="form-control-file" id="healthSafetyStatement">
+              </div>
+        
+              <div class="form-group">
+                <label for="liabilityInsurance">Copy of your Employer Liability and Public Liability Insurance Certificate(s)</label>
+                <input type="file" class="form-control-file" id="liabilityInsurance">
+              </div>
+        
+              <div class="form-group">
+                <label for="companyRegistration">Proof of Company Registration</label>
+                <input type="file" class="form-control-file" id="companyRegistration">
+              </div>
+        
+              <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+        
+    
+        
+        
+
+
+
+
+        </div>
+
+
+
+
+
+
+      </div>
+    </div>
+   
+
+
+    {% include 'footer.html' %}
+
+
+    <script>
+      $(document).ready(function(){
+          $("#dob").datepicker({
+              dateFormat: "dd/mm/yy",
+              changeMonth: true,
+              changeYear: true,
+              yearRange: "1900:+0", 
+              showButtonPanel: true
+          });
+      });
+  </script>
