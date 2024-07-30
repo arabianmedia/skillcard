@@ -5,6 +5,7 @@ urlpatterns = [
 
     path('', views.membershipOptions, name="membershipOptions"),
     path('apply/', views.membershipForm, name="membershipForm"),
+    path('members/', views.memebers, name="members"),
 
 ]
 

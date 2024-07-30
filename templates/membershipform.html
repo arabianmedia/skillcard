@@ -16,7 +16,7 @@
 <style>
 
   p,li,h3,h2,h4,label{
-    color:white;
+    color:rgb(0, 0, 0);
     
   }
 
@@ -53,7 +53,7 @@
 
 .main-button-red button {
   font-size: 13px;
-  color: #fff;
+  color: #000000;
   background-color: #a12c2f;
   padding: 12px 30px;
   display: inline-block;
@@ -63,24 +63,40 @@
   transition: all .3s;
 }
 
+.container11{
+  width: 100%;
+  padding-right: var(--bs-gutter-x, .75rem);
+  padding-left: var(--bs-gutter-x, .75rem);
+  margin-right: auto;
+  margin-left: auto;
+  max-width: 1016px;
+}
+
+.ddd{
+  border:1px solid black;
+  padding: 40px;
+  background-color: #ffffff;
+}
 
 </style>
 
   <section class="meetings-page" id="meetings">
-    <div class="container">
+    <div class="container11  ddd">
       <div class="row">
         <div class="col-lg-12">
         
             <h2>Section 1 - Company Information</h2>
-            <form>
+            <form method="post" enctype="multipart/form-data">
+              {% csrf_token %}
+
               <div class="form-group">
                 <label for="companyName">Company Name</label>
-                <input type="text" class="form-control" id="companyName" placeholder="Enter company name">
+                <input name="companyName" type="text" class="form-control" id="companyName" placeholder="Enter company name">
               </div>
         
               <div class="form-group">
                 <label for="asbestosRemoval">Does your business also deal with asbestos removal operations?</label>
-                <select class="form-control" id="asbestosRemoval">
+                <select name="asbestosRemoval" class="form-control" id="asbestosRemoval">
                   <option value="" disabled selected>—Please choose an option—</option>
                   <option value="yes">Yes</option>
                   <option value="no">No</option>
@@ -89,32 +105,32 @@
         
               <div class="form-group">
                 <label for="contactName">Contact Name</label>
-                <input type="text" class="form-control" id="contactName" placeholder="Enter contact name">
+                <input name="contactName" type="text" class="form-control" id="contactName" placeholder="Enter contact name">
               </div>
         
               <div class="form-group">
                 <label for="address">Address</label>
-                <input type="text" class="form-control" id="address" placeholder="Enter address">
+                <input name="address" type="text" class="form-control" id="address" placeholder="Enter address">
               </div>
         
               <div class="form-group">
                 <label for="postcode">Postcode</label>
-                <input type="text" class="form-control" id="postcode" placeholder="Enter postcode">
+                <input name="postcode" type="text" class="form-control" id="postcode" placeholder="Enter postcode">
               </div>
         
               <div class="form-group">
                 <label for="telephone">Telephone</label>
-                <input type="text" class="form-control" id="telephone" placeholder="Enter telephone">
+                <input name="telephone" type="text" class="form-control" id="telephone" placeholder="Enter telephone">
               </div>
         
               <div class="form-group">
                 <label for="email">Email</label>
-                <input type="email" class="form-control" id="email" placeholder="Enter email">
+                <input name="email" type="email" class="form-control" id="email" placeholder="Enter email">
               </div>
         
               <div class="form-group">
                 <label for="website">Website</label>
-                <input type="url" class="form-control" id="website" placeholder="Enter website">
+                <input name="website" type="url" class="form-control" id="website" placeholder="Enter website">
               </div>
         
               <h4>Training Contact</h4>
@@ -122,18 +138,16 @@
                 <div class="col-lg-6">
                   <div class="form-group">
                     <label for="trainingContactName">Name</label>
-                    <input type="text" class="form-control" id="trainingContactName" placeholder="Enter name">
+                    <input name="trainingContactName" type="text" class="form-control" id="trainingContactName" placeholder="Enter name">
                   </div>
                 </div>
 
                 <div class="col-lg-6">
                   <div class="form-group">
                     <label for="trainingContactEmail">Email</label>
-                    <input type="email" class="form-control" id="trainingContactEmail" placeholder="Enter email">
+                    <input name="trainingContactEmail" type="email" class="form-control" id="trainingContactEmail" placeholder="Enter email">
                   </div>
                 </div>
-
-
               </div>
 
               <h4>Audit Contact (ACAD only)</h4>
@@ -141,13 +155,13 @@
                 <div class="col-lg-6">
                   <div class="form-group">
                     <label for="auditContactName">Name</label>
-                    <input type="text" class="form-control" id="auditContactName" placeholder="Enter name">
+                    <input name="auditContactName" type="text" class="form-control" id="auditContactName" placeholder="Enter name">
                   </div>
                 </div>
                 <div class="col-lg-6">
                   <div class="form-group">
                     <label for="auditContactEmail">Email</label>
-                    <input type="email" class="form-control" id="auditContactEmail" placeholder="Enter email">
+                    <input name="auditContactEmail" type="email" class="form-control" id="auditContactEmail" placeholder="Enter email">
                   </div>
                 </div>
               </div>
@@ -165,14 +179,14 @@
                 <div class="col-lg-6">
                   <div class="form-group">
                     <label for="marketingContactName">Name</label>
-                    <input type="text" class="form-control" id="marketingContactName" placeholder="Enter name">
+                    <input name="marketingContactName" type="text" class="form-control" id="marketingContactName" placeholder="Enter name">
                   </div>
                 </div>
 
                 <div class="col-lg-6">
                   <div class="form-group">
                     <label for="marketingContactEmail">Email</label>
-                    <input type="email" class="form-control" id="marketingContactEmail" placeholder="Enter email">
+                    <input name="marketingContactEmail" type="email" class="form-control" id="marketingContactEmail" placeholder="Enter email">
                   </div>
                 </div>
 
@@ -190,13 +204,13 @@
                 <div class="col-lg-6">
                   <div class="form-group">
                     <label for="regionalContactName">Name</label>
-                    <input type="text" class="form-control" id="regionalContactName" placeholder="Enter name">
+                    <input name="regionalContactName" type="text" class="form-control" id="regionalContactName" placeholder="Enter name">
                   </div>
                 </div>
                 <div class="col-lg-6">
                   <div class="form-group">
                     <label for="regionalContactEmail">Email</label>
-                    <input type="email" class="form-control" id="regionalContactEmail" placeholder="Enter email">
+                    <input name="regionalContactEmail" type="email" class="form-control" id="regionalContactEmail" placeholder="Enter email">
                   </div>
                 </div>
               </div>
@@ -212,13 +226,13 @@
                 <div class="col-lg-6">
                   <div class="form-group">
                     <label for="accountsContactName">Name</label>
-                    <input type="text" class="form-control" id="accountsContactName" placeholder="Enter name">
+                    <input name="accountsContactName" type="text" class="form-control" id="accountsContactName" placeholder="Enter name">
                   </div>
                 </div>
                 <div class="col-lg-6">
                   <div class="form-group">
                     <label for="accountsContactEmail">Email</label>
-                    <input type="email" class="form-control" id="accountsContactEmail" placeholder="Enter email">
+                    <input name="accountsContactEmail" type="email" class="form-control" id="accountsContactEmail" placeholder="Enter email">
                   </div>
                 </div>
               </div>
@@ -231,22 +245,22 @@
               <h4>Additional locations and contact details</h4>
               <div class="form-group">
                 <label for="additionalTelephone">Telephone</label>
-                <input type="text" class="form-control" id="additionalTelephone" placeholder="Enter telephone">
+                <input name="additionalTelephone" type="text" class="form-control" id="additionalTelephone" placeholder="Enter telephone">
               </div>
         
               <div class="form-group">
                 <label for="additionalPostcode">Postcode</label>
-                <input type="text" class="form-control" id="additionalPostcode" placeholder="Enter postcode">
+                <input name="additionalPostcode" type="text" class="form-control" id="additionalPostcode" placeholder="Enter postcode">
               </div>
         
               <div class="form-group">
                 <label for="companyRegNo">Company Reg No</label>
-                <input type="text" class="form-control" id="companyRegNo" placeholder="Enter company reg no">
+                <input name="companyRegNo" type="text" class="form-control" id="companyRegNo" placeholder="Enter company reg no">
               </div>
         
               <div class="form-group">
                 <label for="vatRegNo">VAT Reg No</label>
-                <input type="text" class="form-control" id="vatRegNo" placeholder="Enter VAT reg no">
+                <input name="vatRegNo" type="text" class="form-control" id="vatRegNo" placeholder="Enter VAT reg no">
               </div>
 
 
@@ -255,51 +269,38 @@
               <h2>Section 2 - Confirm membership application</h2>
               <div class="form-group">
                 <label for="signature">Signed</label>
-                <input type="text" class="form-control" id="signature" placeholder="Enter your name">
+                <input name="signature" type="text" class="form-control" id="signature" placeholder="Enter your name">
               </div>
         
               <div class="form-group">
                 <label for="position">Position Held in Company</label>
-                <input type="text" class="form-control" id="position" placeholder="Enter position">
+                <input name="position" type="text" class="form-control" id="position" placeholder="Enter position">
               </div>
         
               <div class="form-group">
                 <label for="date">Date</label>
-                <input type="text" class="form-control" id="date" value="26/07/2024" readonly>
+                <input name="date" type="date" class="form-control" id="date"  required>
               </div>
         
               <div class="form-group">
                 <label for="healthSafetyStatement">Signed Health & Safety Statement</label>
-                <input type="file" class="form-control-file" id="healthSafetyStatement">
+                <input name="healthSafetyStatement" type="file" class="form-control-file" id="healthSafetyStatement">
               </div>
         
               <div class="form-group">
                 <label for="liabilityInsurance">Copy of your Employer Liability and Public Liability Insurance Certificate(s)</label>
-                <input type="file" class="form-control-file" id="liabilityInsurance">
+                <input name="liabilityInsurance" type="file" class="form-control-file" id="liabilityInsurance">
               </div>
         
               <div class="form-group">
                 <label for="companyRegistration">Proof of Company Registration</label>
-                <input type="file" class="form-control-file" id="companyRegistration">
+                <input name="companyRegistration" type="file" class="form-control-file" id="companyRegistration">
               </div>
         
               <button type="submit" class="btn btn-primary">Submit</button>
             </form>
         
-    
-        
-        
-
-
-
-
         </div>
-
-
-
-
-
-
       </div>
     </div>
    
@@ -308,14 +309,4 @@
     {% include 'footer.html' %}
 
 
-    <script>
-      $(document).ready(function(){
-          $("#dob").datepicker({
-              dateFormat: "dd/mm/yy",
-              changeMonth: true,
-              changeYear: true,
-              yearRange: "1900:+0", 
-              showButtonPanel: true
-          });
-      });
-  </script>
+   

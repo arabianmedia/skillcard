@@ -52,6 +52,8 @@
             <p>Skill Card </p>
           </div>
         </div>
+
+        
         <div class="col-lg-4 col-sm-4">
           <div class="right-icons">
             <ul>
@@ -62,9 +64,12 @@
             </ul>
           </div>
         </div>
+
+
       </div>
     </div>
   </div>
+
 
   <!-- ***** Header Area Start ***** -->
   <header class="header-area header-sticky">
@@ -92,7 +97,7 @@
                             <a href="javascript:void(0)">Membership</a>
                             <ul class="sub-menu">
                                 <li><a href="{% url 'membershipOptions' %}">Membership Level</a></li>
-                                <li><a href="#">All Memebers</a></li>
+                                <li><a href="{% url 'members' %}">All Memebers</a></li>
                                 <li><a href="{% url 'membershipForm' %}">Apply for Memebers</a></li>
                             </ul>
                           </li>

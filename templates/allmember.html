@@ -1,0 +1,95 @@
+
+{% load static %}
+{% include 'header.html' %}
+
+
+
+<style>
+  .accordion-body {
+    padding: 0rem 0rem;
+}
+
+  .meetings-page ul li{
+    list-style:circle;
+    margin-left: 20px;
+  }
+
+  .carddd1{
+    width: 60%;
+  }
+
+  section.meetings-page .main-button-red {
+    text-align: left;
+  }
+  .pfaq{
+    color:rgb(0, 0, 0);
+  }
+
+  .cardd{
+    background-color: white;
+    border-radius: 10px;
+    padding:20px;
+    margin:10px;
+  }
+
+</style>
+
+
+  <section class="heading-page header-text" id="top">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <h6>Membership</h6>
+          <h2>Members</h2>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <section class="meetings-page" id="meetings">
+    <div class="container">
+      <div class="row">
+
+
+
+        <div class="col-lg-12">
+          <div class="row">
+
+
+<!-- card start -->
+
+
+{% for i in members %}
+<div class="col-lg-4">
+  <div class="cardd">
+    <h3>{{i.company_name}}</h3>
+    <p>{{i.address}}</p>
+    <a href="mailto:{{i.email}}">{{i.email}}</a><br>
+    <a href="{{i.website}}">{{i.website}}</a>
+  </div>
+</div>
+{% endfor %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- card end  -->
+            
+          </div>
+        </div>
+      </div>
+    </div>
+   
+
+
+    {% include 'footer.html' %}
